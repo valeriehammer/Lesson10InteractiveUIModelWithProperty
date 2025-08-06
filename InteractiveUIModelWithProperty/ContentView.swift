@@ -6,12 +6,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State private var name = ""
-    //private var name = "" is a *property* because it is a variable specific to the structure of the ContentView and won't work in any other UI views. It is set to an empty string to prompt that nothing is entered upon the app opening.
+    //var name = "" is a *property* because it is a variable specific to the structure of the ContentView. For this app, the var name is set to an empty string to prompt that nothing is entered upon the app opening.
     //@State is a *property wrapper*. It tells Swift to keep track of the variable and update the interface based on the user's input. We use the @State property wrapper when data is likely to change and needs to be updated and reflected in UI accordingly.
+    //Marking @State properties as *private* emphasizes that the state is local to the view—it doesn't get shared outside of where it was created.
     
     @State private var textTitle = "What is your name?"
-    //Creates a property for the textTitle of page and wraps it in @State to indicate that the textTitle will change over time based on user input (based on how the code below is written, textTitle will change to Welcome, name! after the user enters a name and clicks the Submit button).
+    //Creates the property textTitle, wrapping it in @State private indicates  the textTitle will change over time based on user input and won't get shared outside of where it was created. (Based on how the code below is written, textTitle will change to Welcome, name! after the user enters a name and clicks the Submit button).
     //Entering an initial string (instead of a blank one like we did for name above) makes the default text "What is your name?" when the app is opened for the first time and/or nothing is submitted in the text field.
     
     
